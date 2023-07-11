@@ -9,7 +9,7 @@ import { CardComponent } from 'src/components/card/card.component';
 import { ModalComponent } from 'src/components/modal/modal.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, CardComponent, ModalComponent],
+  declarations: [AppComponent, CardComponent, ModalComponent, NavbarComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
