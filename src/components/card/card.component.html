@@ -1,0 +1,58 @@
+<div class="container mx-auto px-10 mt-10">
+  <h1 class="text-3xl font-bold mb-4">Planet: {{ planetData.name }}</h1>
+  <div
+    class="bg-white rounded-sm shadow-2xl p-6 hover:-translate-x-2 hover:-translate-y-2 transition duration-300"
+    (click)="isModalOpen = true"
+  >
+    <div class="grid grid-cols-2 gap-5">
+      <div>
+        <h2 class="text-xl font-semibold mb-1">Climate:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.climate }}</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Terrain:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.terrain }}</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Population:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.population }}</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Diameter:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.diameter }}</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Gravity:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.gravity }}</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Rotation Period:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.rotation_period }}</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Orbital Period:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.orbital_period }}</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Surface Water:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.surface_water }}</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Created:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.created }}</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Edited:</h2>
+        <p class="text-gray-700 font-mono">{{ planetData.edited }}</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-modal
+      class="grid grid-cols-2"
+      *ngIf="isModalOpen"
+      [(modalOpen)]="isModalOpen"
+      [url]="planetData.url"
+    />
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div
+  class="fixed inset-0 flex items-center justify-center z-50 bg-gray-500 bg-opacity-50"
+>
+  <div class="bg-white p-8 rounded shadow-lg m-4">
+    <h2 class="text-xl font-bold mb-4">Residents of planet</h2>
+    <div class="grid grid-cols-2 grid-rows-2">
+      <div
+        *ngFor="let person of data"
+        class="m-5 p-2 bg-gray-600 rounded-sm hover:bg-gray-500 hover:-translate-x-2 hover:-translate-y-2 transition duration-300"
+      >
+        <div class="container shadow-2xl">
+          <h2 class="text-xl font-semibold mb-1">Name:</h2>
+          <p
+            class="text-gray-700 font-mono text-white flex flex-wrap md:flex-no-wrap"
+          >
+            {{ person.name }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <button
+      (click)="closeModal()"
+      class="border bg-gray-600 font-mono rounded p-2 text-white hover:bg-gray-400 duration-300"
+    >
+      close
+    </button>
+  </div>
+</div>
