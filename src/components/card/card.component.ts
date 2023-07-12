@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { ModalService } from 'src/services/modalService';
 
 @Component({
   selector: 'app-card',
