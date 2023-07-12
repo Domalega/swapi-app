@@ -33,7 +33,6 @@ export class DataService {
       const data: any = await this.http.get(url).toPromise();
       const residentsUrl: string[] = data.residents;
       let allResidents: object[] = [];
-      console.log(gender);
       if (gender == 'all') {
         for (const url of residentsUrl) {
           const response: any = await this.http.get(url).toPromise();
@@ -43,7 +42,7 @@ export class DataService {
       } else if (gender == 'male') {
         for (const url of residentsUrl) {
           const response: any = await this.http.get(url).toPromise();
-          console.log('maaale');
+
           if (response.gender == 'male') allResidents.push(response);
         }
       } else if (gender == 'female') {
