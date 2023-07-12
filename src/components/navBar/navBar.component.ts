@@ -1,15 +1,21 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navBar.component.html',
 })
 export class NavbarComponent {
-  constructor() {
-    localStorage.setItem('userChoice', 'all');
+  constructor(private router: Router) {
+    localStorage.setItem('gender', 'all');
   }
 
   onOptionSelected(event: any) {
-    localStorage.setItem('userChoice', event.target.value);
+    localStorage.setItem('gender', event.target.value);
+  }
+
+  navigateToHome() {
+    localStorage.removeItem('urlOfPlanet');
+    this.router.navigateByUrl('/');
   }
 }

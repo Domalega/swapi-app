@@ -23,7 +23,6 @@ export class ModalComponent {
   }
 
   closeModal(): void {
-    console.log(this.data);
     this.modalOpen = false;
     this.modalOpenChange.emit(this.modalOpen);
   }

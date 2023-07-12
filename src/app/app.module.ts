@@ -4,14 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from 'src/components/navBar/navBar.component';
-import { CardComponent } from 'src/components/card/card.component';
-import { ModalComponent } from 'src/components/modal/modal.component';
+import { HomeComponent } from 'src/pages/home/home.component';
+import { ResidentsComponent } from 'src/pages/residents/residents.component';
+import { HomeModule } from '../pages/home/home.module';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent, ModalComponent, NavbarComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, HomeComponent, ResidentsComponent],
   providers: [],
   bootstrap: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, HomeModule],
 })
 export class AppModule {}

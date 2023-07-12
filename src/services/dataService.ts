@@ -28,17 +28,26 @@ export class DataService {
     }
   }
 
-  async getPeople(url: string): Promise<any> {
+  async getPeople(url: any): Promise<any> {
     try {
+      console.log('SS');
+      const gender = localStorage.getItem('gender');
       const data: any = await this.http.get(url).toPromise();
       const residentsUrl: string[] = data.residents;
       let allResidents: object[] = [];
+      if (gender == 'all') {
+        for (const url of residentsUrl) {
+          const response: any = await this.http.get(url).toPromise();
 
-      for (const url of residentsUrl) {
-        const response: any = await this.http.get(url).toPromise();
-        allResidents.push(response);
+          allResidents.push(response);
+        }
+      } else if (gender == 'male') {
+        for (const url of residentsUrl) {
+          const response: any = await this.http.get(url).toPromise();
+          if (response.gender == 'male') allResidents.push(response);
+        }
       }
-      console.log(allResidents);
+
       return allResidents;
     } catch (error) {
       console.log(error);
