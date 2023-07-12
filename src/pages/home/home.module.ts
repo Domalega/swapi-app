@@ -4,19 +4,22 @@ import { NgModule } from '@angular/core';
 import { CardPersonComponent } from 'src/components/cardPerson/cardPerson.component';
 import { CardPlanetComponent } from 'src/components/cardPlanet/cardPlanet.component';
 import { ModalComponent } from 'src/components/modal/modal.component';
-import { NavbarComponent } from 'src/components/navBar/navBar.component';
+import { NavbarHomeComponent } from 'src/components/navBarHome/navBarHome.component';
+import { NavbarResidentsComponent } from 'src/components/navBarResidents/navBarResidents.component';
 
 @NgModule({
   declarations: [
     CardPlanetComponent,
-    NavbarComponent,
+    NavbarResidentsComponent,
+    NavbarHomeComponent,
     ModalComponent,
     CardPersonComponent,
   ],
   imports: [CommonModule, HttpClientModule],
   exports: [
     CardPlanetComponent,
-    NavbarComponent,
+    NavbarResidentsComponent,
+    NavbarHomeComponent,
     ModalComponent,
     CardPersonComponent,
   ],

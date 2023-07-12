@@ -12,7 +12,7 @@ export class CardPlanetComponent {
 
   isModalOpen: boolean = false;
 
-  navigateToResidents(url: string) {
+  navigateToResidents(url: string): void {
     localStorage.setItem('urlOfPlanet', url);
     this.router.navigateByUrl('/residents');
   }

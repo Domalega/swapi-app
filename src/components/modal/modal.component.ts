@@ -12,7 +12,7 @@ export class ModalComponent {
   data: any;
   constructor(private peopleServices: DataService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.peopleServices
       .getPeople(this.url)
       .then((data) => (this.data = data))

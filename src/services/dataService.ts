@@ -13,7 +13,6 @@ export class DataService {
   async getPlanets(): Promise<any> {
     try {
       let allResults: Array<Object> = [];
-      let filter: string | null = localStorage.getItem('userChoice');
       let currentURL: string = this.URL;
 
       while (currentURL) {
@@ -30,11 +29,11 @@ export class DataService {
 
   async getPeople(url: any): Promise<any> {
     try {
-      console.log('SS');
       const gender = localStorage.getItem('gender');
       const data: any = await this.http.get(url).toPromise();
       const residentsUrl: string[] = data.residents;
       let allResidents: object[] = [];
+      console.log(gender);
       if (gender == 'all') {
         for (const url of residentsUrl) {
           const response: any = await this.http.get(url).toPromise();
@@ -44,7 +43,14 @@ export class DataService {
       } else if (gender == 'male') {
         for (const url of residentsUrl) {
           const response: any = await this.http.get(url).toPromise();
+          console.log('maaale');
           if (response.gender == 'male') allResidents.push(response);
+        }
+      } else if (gender == 'female') {
+        for (const url of residentsUrl) {
+          const response: any = await this.http.get(url).toPromise();
+
+          if (response.gender == 'female') allResidents.push(response);
         }
       }
 

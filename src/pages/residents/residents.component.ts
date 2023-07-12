@@ -16,23 +16,8 @@ export class ResidentsComponent {
   }
 
   ngOnInit() {
-    this.personServices
-      .getPeople(this.data)
-      .then((data) => (this.person = data));
-
-    window.addEventListener('storage', (event) => {
-      if (event.key === 'gender') {
-        const newData = event.newValue;
-        console.log('change data');
-        this.data = newData;
-        this.refreshData();
-      }
+    this.personServices.getPeople(this.data).then((data) => {
+      this.person = data;
     });
-  }
-
-  private refreshData() {
-    this.personServices
-      .getPeople(this.data)
-      .then((data) => (this.person = data));
   }
 }

@@ -5,4 +5,6 @@ import { DataService } from 'src/services/dataService';
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor() {}
+}
