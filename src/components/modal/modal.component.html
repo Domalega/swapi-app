@@ -8,11 +8,9 @@
         *ngFor="let person of data"
         class="m-5 p-2 bg-gray-600 rounded-sm hover:bg-gray-500 hover:-translate-x-2 hover:-translate-y-2 transition duration-300"
       >
-        <div class="container shadow-2xl">
+        <div class="container shadow-2xl cursor-pointer">
           <h2 class="text-xl font-semibold mb-1">Name:</h2>
-          <p
-            class="text-gray-700 font-mono text-white flex flex-wrap md:flex-no-wrap"
-          >
+          <p class="font-mono text-white flex flex-wrap md:flex-no-wrap">
             {{ person.name }}
           </p>
         </div>
