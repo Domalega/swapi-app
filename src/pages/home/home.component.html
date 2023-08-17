@@ -1,5 +1,8 @@
-<div class="h-max selection:bg-yellow-400 selection:text-black">
+<div class="h-screen selection:bg-yellow-400 selection:text-black">
   <app-navbar-home />
+  <div *ngIf="dataIsLoading" class="h-screen flex justify-center items-center">
+    <app-loading />
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-2">
     <app-card-planet *ngFor="let planet of planets" [planetData]="planet" />
   </div>

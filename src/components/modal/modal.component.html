@@ -3,6 +3,9 @@
 >
   <div class="bg-white p-8 rounded shadow-lg m-4">
     <h2 class="text-xl font-bold mb-4">Residents of planet</h2>
+    <div *ngIf="dataIsLoading" class="flex justify-center items-center">
+      <app-loading />
+    </div>
     <div class="grid grid-cols-2 grid-rows-2">
       <div
         *ngFor="let person of data"
