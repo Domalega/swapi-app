@@ -27,7 +27,7 @@ export class ModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getData;
+    this.getData();
   }
 
   closeModal(): void {
